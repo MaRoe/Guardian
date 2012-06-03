@@ -13,7 +13,6 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.guardian.ActionType;
 import org.guardian.Guardian;
 import org.guardian.params.QueryParams;
-import org.guardian.params.QueryParamsFactory;
 import org.guardian.permissions.RollbackSize;
 import org.guardian.permissions.RollbackSizes;
 import org.guardian.tools.Tool;
@@ -56,7 +55,10 @@ public final class Config {
     // Other
     public PluginDescriptionFile bridgeDescription;
     private Guardian plugin = Guardian.getInstance();
+    @SuppressWarnings("unused")
     private String lastVersion;
+	public boolean useMetrics;
+	public boolean askBeforeRollback;
 
     public Config() {
         load();
@@ -74,6 +76,8 @@ public final class Config {
         logPlayerInfo = config.getBoolean("logPlayerInfo");
         ninjaMode = config.getBoolean("ninjaMode");
         motd = config.getBoolean("motd");
+        useMetrics = config.getBoolean("Enable-Metrics", true);
+        askBeforeRollback = true;
         // Populate bridge config
         bridgeName = config.getString("bridge.name");
         tablePrefix = config.getString("bridge.tablePrefix");

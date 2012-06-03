@@ -3,7 +3,6 @@ package org.guardian.listeners.inventory;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.event.EventHandler;

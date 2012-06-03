@@ -3,8 +3,6 @@ package org.guardian.listeners.player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.guardian.ActionType;
-import org.guardian.entries.BlockEntry;
 import org.guardian.entries.PlayerEntry;
 import org.guardian.listeners.LoggingListener;
 

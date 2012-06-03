@@ -51,7 +51,7 @@ public class Guardian extends JavaPlugin {
                 BukkitUtils.info("Guardian is out of date, please download the latest");
             }
         } catch (Exception ex) {
-            BukkitUtils.severe("Error occurred while checking if Guardian is up to date", ex);
+            BukkitUtils.severe("Error occurred while checking if Guardian is up to date");
         }
     }
 
@@ -133,12 +133,14 @@ public class Guardian extends JavaPlugin {
             worldEdit = (WorldEditPlugin) wePlugin;
             BukkitUtils.info("WorldEdit " + getWorldEdit().getDescription().getVersion() + " has been found, selection rollbacks enabled");
         }
+        if (conf.useMetrics) {
         BukkitUtils.info("Activating Metrics");
-        try {
-            Metrics metrics = new Metrics(this);
-            metrics.start();
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        	try {
+            	Metrics metrics = new Metrics(this);
+            	metrics.start();
+        	} catch (IOException ex) {
+        		ex.printStackTrace();
+        	}
         }
     }
 

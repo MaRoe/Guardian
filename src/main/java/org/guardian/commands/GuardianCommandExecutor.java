@@ -1,14 +1,12 @@
 package org.guardian.commands;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.lang.ArrayUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.guardian.util.BukkitUtils;
 
 public class GuardianCommandExecutor implements CommandExecutor {
 
@@ -23,6 +21,7 @@ public class GuardianCommandExecutor implements CommandExecutor {
         commands.add(new ToolCommand());
         commands.add(new QueueSizeCommand());
         commands.add(new QueueSaveCommand());
+        commands.add(new ConfirmCommand());
     }
 
     /**

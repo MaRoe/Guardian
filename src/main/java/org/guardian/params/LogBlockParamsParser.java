@@ -5,6 +5,7 @@ import org.guardian.Guardian;
 
 public class LogBlockParamsParser implements ParamsParser {
 
+	@SuppressWarnings("unused")
     private final Guardian plugin = Guardian.getInstance();
     private final Map<String, Param> keywords;
 

@@ -1,8 +1,6 @@
 package org.guardian.commands;
 
-import java.sql.SQLException;
 import java.util.List;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.guardian.Guardian;
@@ -65,7 +63,6 @@ public class RollbackCommand extends BaseCommand {
 
     @Override
     public BaseCommand newInstance() {
-        // TODO Auto-generated method stub
         return new RollbackCommand();
     }
 }

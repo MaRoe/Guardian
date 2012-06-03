@@ -15,12 +15,19 @@ public class Rollback implements Runnable {
     private final Queue<Entry> entries;
     private final int taskId;
     private final CommandSender sender;
+    @SuppressWarnings("unused")
     private final int size;
 
     public Rollback(List<Entry> entries, CommandSender sender) {
         this.entries = new LinkedBlockingQueue<Entry>(entries);
         this.sender = sender;
         this.size = entries.size();
+        if (Guardian.getInstance().getConf().askBeforeRollback) {
+        	boolean finished = false;
+        	while (!finished) {
+        		
+        	}
+        }
         taskId = Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(Guardian.getInstance(), this, 20, 20);
     }
 
