@@ -4,6 +4,8 @@ checkVersion: true
 sendStatistics: true
 logPlayerInfo: true
 motd: true
+Enable-Metrics: true
+askBeforeRollback: true
 bridge:
   name: Guardian-MySQL.jar
   tablePrefix: gd_

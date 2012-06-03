@@ -77,7 +77,7 @@ public final class Config {
         ninjaMode = config.getBoolean("ninjaMode");
         motd = config.getBoolean("motd");
         useMetrics = config.getBoolean("Enable-Metrics", true);
-        askBeforeRollback = true;
+        askBeforeRollback = config.getBoolean("askBeforeRollback", true);
         // Populate bridge config
         bridgeName = config.getString("bridge.name");
         tablePrefix = config.getString("bridge.tablePrefix");
