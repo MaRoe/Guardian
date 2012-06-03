@@ -39,7 +39,7 @@ public class DatabaseLoader {
                     BukkitUtils.info("Guardian-Bridge is out of date, please download the latest");
                 }
             } catch (Exception ex) {
-                BukkitUtils.severe("Error occurred while checking if Guardian is up to date", ex);
+                BukkitUtils.severe("Error occurred while checking if Guardian is up to date");
             }
             // Clean it all up
             stream.close();
