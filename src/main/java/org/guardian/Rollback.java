@@ -22,10 +22,16 @@ public class Rollback implements Runnable {
         this.entries = new LinkedBlockingQueue<Entry>(entries);
         this.sender = sender;
         this.size = entries.size();
+    	int waits = 0;
         if (Guardian.getInstance().getConf().askBeforeRollback) {
         	boolean finished = false;
         	while (!finished) {
-        		
+        		finished = Ask.getAskedPlayers().get(sender.getName());
+        		if (waits > 1000) {
+        			taskId = 0;
+        			return;
+        		}
+        		waits++;
         	}
         }
         taskId = Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(Guardian.getInstance(), this, 20, 20);
