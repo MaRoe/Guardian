@@ -133,12 +133,14 @@ public class Guardian extends JavaPlugin {
             worldEdit = (WorldEditPlugin) wePlugin;
             BukkitUtils.info("WorldEdit " + getWorldEdit().getDescription().getVersion() + " has been found, selection rollbacks enabled");
         }
+        if (conf.useMetrics) {
         BukkitUtils.info("Activating Metrics");
-        try {
-            Metrics metrics = new Metrics(this);
-            metrics.start();
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        	try {
+            	Metrics metrics = new Metrics(this);
+            	metrics.start();
+        	} catch (IOException ex) {
+        		ex.printStackTrace();
+        	}
         }
     }
 

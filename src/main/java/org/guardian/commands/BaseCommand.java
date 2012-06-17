@@ -12,7 +12,7 @@ import org.guardian.util.BukkitUtils;
 
 /**
  * Abstract class representing a command. When run by the command manager (
- * {@link Guardian}), it pre-processes all the data into more useful forms.
+ * {@link GuardianCommandExecutor}), it pre-processes all the data into more useful forms.
  * Extending classes should adjust required fields in their constructor
  *
  */
