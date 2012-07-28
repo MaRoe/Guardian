@@ -62,6 +62,13 @@ public class EntityExplode extends LoggingListener {
                     }
                 }
                 break;
+            case ENDER_DRAGON:
+                if (guardian.getConf().isLogged(loc.getWorld().getName(), ActionType.ENTITY_ENDERDRAGON_DESTROY, ENVIRONMENT)) {
+                    for (final Block block : blockList) {
+                        consumer.queueEntry(new BlockEntry(ActionType.ENTITY_ENDERDRAGON_DESTROY, ENVIRONMENT, block.getLocation(), System.currentTimeMillis(), block.getTypeId(), block.getData(), 0, (byte) 0, PLUGIN));
+                    }
+                }
+                break;
             // TODO Give Ender Crystals their own log type
             case ENDER_CRYSTAL:
             case UNKNOWN:
