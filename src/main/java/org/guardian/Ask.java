@@ -1,10 +1,10 @@
 package org.guardian;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Ask {
 	
@@ -13,7 +13,7 @@ public class Ask {
 	public static void askPlayer(CommandSender player) {
 		if (!askedPlayers.containsKey(player.getName()))
 			askedPlayers.put(player.getName(), false);
-		player.sendMessage(ChatColor.RED + "Type '/guard confirm' to confirm the rollback!");
+		player.sendMessage(ChatColor.RED + "Type '/guard confirm' to confirm the rollback or rebuild!");
 	}
 
 	public static Map<String, Boolean> getAskedPlayers() {

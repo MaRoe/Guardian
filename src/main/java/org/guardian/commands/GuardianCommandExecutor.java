@@ -18,6 +18,7 @@ public class GuardianCommandExecutor implements CommandExecutor {
         commands.add(new SearchCommand());
         commands.add(new PageCommand());
         commands.add(new RollbackCommand());
+        commands.add(new RebuildCommand());
         commands.add(new ToolCommand());
         commands.add(new QueueSizeCommand());
         commands.add(new QueueSaveCommand());

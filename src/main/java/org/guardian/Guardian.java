@@ -1,14 +1,6 @@
 package org.guardian;
 
 import com.sk89q.worldedit.bukkit.WorldEditPlugin;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.List;
-
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -23,6 +15,14 @@ import org.guardian.util.BukkitUtils;
 import org.guardian.util.Utils;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
 
 public class Guardian extends JavaPlugin {
 
@@ -249,8 +249,12 @@ public class Guardian extends JavaPlugin {
      *
      * @param params the query paramaters to use
      */
-    public void rebuild(QueryParams params) {
-        // TODO
+    public void rebuild(QueryParams params) throws SQLException {
+        rebuild(getLog(params), null);
+    }
+
+    public void rebuild(List<Entry> entries, CommandSender sender) {
+        new Rebuild(entries, sender); // TODO add active rebuilds
     }
 
     /**
