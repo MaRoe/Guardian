@@ -4,6 +4,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.guardian.util.BukkitUtils;
 
+import java.util.List;
+
 public class HelpCommand extends BaseCommand {
 
     public HelpCommand() {
@@ -19,14 +21,16 @@ public class HelpCommand extends BaseCommand {
         if (args.isEmpty()) {
             BukkitUtils.sendMessage(sender, ChatColor.AQUA + cleanTitle("Guardian v" + plugin.getDescription().getVersion(), "="));
             BukkitUtils.sendMessage(sender, "Type /guardian help <command> for more info on that command");
-            for (BaseCommand cmd : plugin.getCommandExecutor().getCommands().toArray(new BaseCommand[0])) {
+            List<BaseCommand> var = plugin.getCommandExecutor().getCommands();
+            for (BaseCommand cmd : var.toArray(new BaseCommand[var.size()])) {
                 if (cmd.permission(sender)) {
                     BukkitUtils.sendMessage(sender, "- " + ChatColor.GREEN + "/" + usedCommand + " " + cmd.name + ChatColor.GREEN + " " + cmd.usage);
                 }
             }
         } // Command-specific help
         else {
-            for (BaseCommand cmd : plugin.getCommandExecutor().getCommands().toArray(new BaseCommand[0])) {
+            List<BaseCommand> var = plugin.getCommandExecutor().getCommands();
+            for (BaseCommand cmd : var.toArray(new BaseCommand[var.size()])) {
                 if (cmd.permission(sender) && cmd.name.equalsIgnoreCase(args.get(0))) {
                     BukkitUtils.sendMessage(sender, "---------------------- Guardian - " + cmd.name);
                     BukkitUtils.sendMessage(sender, "- " + ChatColor.GREEN + "/" + usedCommand + " " + cmd.name + ChatColor.GREEN + " " + cmd.usage);

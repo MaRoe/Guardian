@@ -59,7 +59,7 @@ public class Utils {
         try {
             Integer.parseInt(str);
             return true;
-        } catch (final NumberFormatException ex) {
+        } catch (final NumberFormatException ignored) {
         }
         return false;
     }
@@ -74,7 +74,7 @@ public class Utils {
         try {
             Byte.parseByte(str);
             return true;
-        } catch (final NumberFormatException ex) {
+        } catch (final NumberFormatException ignored) {
         }
         return false;
     }
@@ -88,7 +88,7 @@ public class Utils {
      * @return the joined collection
      */
     public static String join(Collection<?> s, String delimiter) {
-        final StringBuffer buffer = new StringBuffer();
+        final StringBuilder buffer = new StringBuilder();
         final Iterator<?> iter = s.iterator();
         while (iter.hasNext()) {
             buffer.append(iter.next());
@@ -111,7 +111,7 @@ public class Utils {
             return "";
         }
         final int len = s.length;
-        final StringBuffer buffer = new StringBuffer(s[0]);
+        final StringBuilder buffer = new StringBuilder(s[0]);
         for (int i = 1; i < len; i++) {
             buffer.append(delimiter).append(s[i]);
         }
