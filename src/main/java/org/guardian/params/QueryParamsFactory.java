@@ -2,9 +2,6 @@ package org.guardian.params;
 
 import com.sk89q.worldedit.bukkit.selections.CuboidSelection;
 import com.sk89q.worldedit.bukkit.selections.Selection;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -13,6 +10,10 @@ import org.bukkit.entity.Player;
 import org.guardian.ActionType;
 import org.guardian.Guardian;
 import org.guardian.util.Utils;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class QueryParamsFactory {
 
@@ -169,34 +170,34 @@ public class QueryParamsFactory {
         if (!params.actions.isEmpty()) {
             out.append("ACTION ");
             for (ActionType a : params.actions) {
-                out.append(a.name() + " ");
+                out.append(a.name()).append(" ");
             }
         }
         if (!params.actions.isEmpty()) {
             out.append("PLAYER ");
             for (String s : params.players) {
-                out.append(s + " ");
+                out.append(s).append(" ");
             }
         }
         if (!params.blocks.isEmpty()) {
             out.append("BLOCK ");
             for (int b : params.blocks) {
-                out.append(b + " ");
+                out.append(b).append(" ");
             }
         }
         if (!params.worlds.isEmpty()) {
             out.append("WORLD ");
             for (World w : params.worlds) {
-                out.append(w.getName() + " ");
+                out.append(w.getName()).append(" ");
             }
         }
         if (params.since != 0) {
             out.append("SINCE ");
-            out.append(params.since + " ");
+            out.append(params.since).append(" ");
         }
         if (params.before != 0) {
             out.append("BEFORE ");
-            out.append(params.before + " ");
+            out.append(params.before).append(" ");
         }
         return out.toString();
     }

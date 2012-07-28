@@ -1,7 +1,5 @@
 package org.guardian.util;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -11,6 +9,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.TNTPrimed;
 import org.bukkit.material.MaterialData;
 import org.guardian.Guardian;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class BukkitUtils {
 
@@ -56,7 +57,7 @@ public class BukkitUtils {
      */
     public static void info(String msg) {
         final StringBuilder out = new StringBuilder();
-        out.append("[Guardian v" + Guardian.getInstance().getDescription().getVersion()  + "] ");
+        out.append("[Guardian v").append(Guardian.getInstance().getDescription().getVersion()).append("] ");
         out.append(msg);
         log.log(Level.INFO, out.toString());
     }
@@ -68,7 +69,7 @@ public class BukkitUtils {
      */
     public static void warning(String msg) {
         final StringBuilder out = new StringBuilder();
-        out.append("[Guardian v" + Guardian.getInstance().getDescription().getVersion()  + "] ");
+        out.append("[Guardian v").append(Guardian.getInstance().getDescription().getVersion()).append("] ");
         out.append(msg);
         log.log(Level.WARNING, out.toString());
     }
@@ -90,7 +91,7 @@ public class BukkitUtils {
      */
     public static void severe(String msg) {
         final StringBuilder out = new StringBuilder();
-        out.append("[Guardian v" + Guardian.getInstance().getDescription().getVersion()  + "] ");
+        out.append("[Guardian v").append(Guardian.getInstance().getDescription().getVersion()).append("] ");
         out.append(msg);
         log.log(Level.SEVERE, out.toString());
     }

@@ -1,14 +1,15 @@
 package org.guardian.entries;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import org.bukkit.Location;
 import org.bukkit.block.BlockState;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.guardian.ActionType;
 import org.guardian.util.BukkitUtils;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ItemEntry extends DataEntry {
 
@@ -75,10 +76,10 @@ public class ItemEntry extends DataEntry {
             msg.append(" ");
         }
         if (action == ActionType.INVENTORY_TAKE) {
-            msg.append("took " + amount + "x " + BukkitUtils.materialName(typeId, (byte) data));
+            msg.append("took ").append(amount).append("x ").append(BukkitUtils.materialName(typeId, (byte) data));
             msg.append(" ");
         } else {
-            msg.append("put in " + amount + "x " + BukkitUtils.materialName(typeId, (byte) data));
+            msg.append("put in ").append(amount).append("x ").append(BukkitUtils.materialName(typeId, (byte) data));
             msg.append(" ");
         }
         if (loc != null) {

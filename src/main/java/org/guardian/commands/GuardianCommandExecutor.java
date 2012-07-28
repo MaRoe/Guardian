@@ -1,12 +1,12 @@
 package org.guardian.commands;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.commons.lang.ArrayUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GuardianCommandExecutor implements CommandExecutor {
 
@@ -40,7 +40,7 @@ public class GuardianCommandExecutor implements CommandExecutor {
 
         // Loop through commands to find match. Supports sub-commands
         BaseCommand guardCmd;
-        BaseCommand[] guardCmdArray = commands.toArray(new BaseCommand[0]);
+        BaseCommand[] guardCmdArray = commands.toArray(new BaseCommand[commands.size()]);
         int index = 0;
         String[] tempArgs = args;
         
@@ -48,7 +48,7 @@ public class GuardianCommandExecutor implements CommandExecutor {
             guardCmd = guardCmdArray[index];
             if(tempArgs[0].equalsIgnoreCase(guardCmd.name)) {
                 if(guardCmd.subCommands.size() > 0 && tempArgs.length > 1) {
-                    guardCmdArray = guardCmd.subCommands.toArray(new BaseCommand[0]);
+                    guardCmdArray = guardCmd.subCommands.toArray(new BaseCommand[guardCmd.subCommands.size()]);
                     index = 0;
                     tempArgs = (String[]) ArrayUtils.remove(tempArgs, 0);
                 } else {
